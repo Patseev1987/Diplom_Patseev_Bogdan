@@ -17,27 +17,55 @@ public class Plant implements Model {
     }
 
     @Override
-    public Collection<Department> loadUnits() {
+    public Collection<Department> loadDataBaseWithDepartments() {
         return listDepartments;
     }
 
     @Override
-    public Map<Tool, Integer> loadToolDataBaseForPlant() {
+    public Map<Tool, Integer> loadToolDataBaseWithTools() {
         return plantListTool;
     }
 
     @Override
-    public Collection<Employee> loadEmployeeDataBaseInDepartment(Department department) {
+    public Collection<Employee> loadEmployeeDataBaseWithEmployeesInDepartment(Department department) {
         return department.getEmployeesList();
     }
 
     @Override
-    public void addUnit(Department department) {
+    public void addDepartment(Department department) {
         if (!listDepartments.contains(department)) {
             listDepartments.add(department);
         } else {
             throw new RuntimeException("Такое подразделение уже есть!");
         }
+    }
+
+    @Override
+    public void removeDepartment(Department department) {
+
+    }
+
+    @Override
+    public void addEmployee(Department department, Employee employee) {
+
+    }
+
+    @Override
+    public void removeEmployee(Department department, Employee employee) {
+
+    }
+
+    @Override
+    public void addTool(Tool tool, int count) {
+
+    }
+
+    @Override
+    public void removeToolInDepartment(Tool tool, int count, Department department) {
+if (!department.getStorageList().containsKey(tool)){
+    throw new RuntimeException("Такого инструмента в подразделние нет! Списание невозможно");
+}
+int temp
     }
 
 

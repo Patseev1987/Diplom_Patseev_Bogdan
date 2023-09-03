@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class MeasuringTool extends Tool{
     private LocalDate checkDate;
-    public MeasuringTool(String toolCode, String name, String designation, String manufacturer, boolean purchasedTool, ToolType type) {
-        super(toolCode, name, designation, manufacturer, purchasedTool, type);
+    public MeasuringTool(String toolCode, String name, String manufacturer, boolean purchasedTool, ToolType type) {
+        super(toolCode, name, manufacturer, purchasedTool, type);
         this.checkDate = LocalDate.now();
     }
 

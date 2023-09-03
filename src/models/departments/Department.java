@@ -6,17 +6,19 @@ import models.tools.Tool;
 import java.util.*;
 
 public class Department {
-    protected int id;
-    protected String name;
-    protected String shortName;
-    protected Map <Tool, Integer> storage;
-    protected List<Employee> employees;
+    private int id;
+    private String name;
+    private String shortName;
+    private Map <Tool, Integer> storage;
+    private List<Employee> employees;
+
     public Department(String name, String shortName,int id) {
         this.id = id;
         this.name=name;
         this.shortName=shortName;
         storage=new HashMap<>();
         employees=new ArrayList<>();
+
     }
 
 
@@ -39,7 +41,19 @@ public class Department {
     }
 
 
-    public void takeFromStorage ( Employee employeeFrom, Employee employeeTo, Tool tool, int amount){
+    public String getName() {
+        return name;
+    }
 
+    public String getShortName() {
+        return shortName;
+    }
+
+    public Map<Tool, Integer> getStorage() {
+        return storage;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
     }
 }

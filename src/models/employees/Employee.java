@@ -18,6 +18,17 @@ public abstract class Employee {
     private LocalDate joinDate;
     private String schemaName;
 
+    private EmployeeEnum occupation;
+
+    public Employee(String lastName, String firstName, String patronymic, Department department, LocalDate joinDate, EmployeeEnum occupation) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.patronymic = patronymic;
+        this.department = department;
+        this.joinDate = joinDate;
+        this.occupation = occupation;
+    }
+
     public String getSchemaName() {
         return schemaName;
     }

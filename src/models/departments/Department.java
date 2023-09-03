@@ -9,36 +9,20 @@ public class Department {
     protected int id;
     protected String name;
     protected String shortName;
-    protected Map <Tool, Integer> storageList;
-    protected Collection<Employee> employeesList;
+    protected Map <Tool, Integer> storage;
+    protected List<Employee> employees;
     public Department(String name, String shortName,int id) {
         this.id = id;
-        this.shortName=name;
+        this.name=name;
         this.shortName=shortName;
-        storageList=new HashMap<>();
-        employeesList=new ArrayList<>();
-    }
-
-    public Collection<Employee> getEmployeesList() {
-        return employeesList;
-    }
-
-    public void addEmployeesInList(Employee employee) {
-        if(!employeesList.contains(employee)) {
-            employeesList.add(employee);
-        }else{
-            throw new RuntimeException("Такой работник уже есть");
-        }
-    }
-
-    public Map<Tool, Integer> getStorageList() {
-        return storageList;
+        storage=new HashMap<>();
+        employees=new ArrayList<>();
     }
 
 
     @Override
     public String toString() {
-        return name.toString();
+        return shortName.toString();
     }
 
 
@@ -52,5 +36,10 @@ public class Department {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+
+    public void takeFromStorage ( Employee employeeFrom, Employee employeeTo, Tool tool, int amount){
+
     }
 }

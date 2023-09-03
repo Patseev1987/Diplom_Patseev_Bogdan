@@ -13,10 +13,6 @@ public abstract class Tool {
      */
     protected String name;
     /**
-     * Обозначение
-     */
-    protected String designation;
-    /**
      * Фирма производитель
      */
     protected String manufacturer;
@@ -27,12 +23,11 @@ public abstract class Tool {
     /**
      * Тип инструмента
      */
-    protected String type;
+    protected ToolType type;
 
-    public Tool(String toolCode, String name, String designation,String manufacturer, boolean purchasedTool, String type) {
+    public Tool(String toolCode, String name                                                     ,String manufacturer, boolean purchasedTool, ToolType type) {
         this.toolCode = toolCode;
         this.name = name;
-        this.designation = designation;
         this.manufacturer = manufacturer;
         this.purchasedTool = purchasedTool;
         this.type = type;
@@ -48,5 +43,47 @@ public abstract class Tool {
     @Override
     public int hashCode() {
         return Objects.hash(toolCode);
+    }
+
+    public String getToolCode() {
+        return toolCode;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public Boolean getPurchasedTool() {
+        return purchasedTool;
+    }
+
+    public void setToolCode(String toolCode) {
+        this.toolCode = toolCode;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public void setPurchasedTool(Boolean purchasedTool) {
+        this.purchasedTool = purchasedTool;
+    }
+
+    public void setType(ToolType type) {
+        this.type = type;
+    }
+
+    public String getType() {
+        return type.toString();
     }
 }

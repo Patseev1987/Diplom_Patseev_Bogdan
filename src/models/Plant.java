@@ -1,27 +1,26 @@
 package models;
 
-import models.dbmodel.dbModel;
+
+import models.departments.Department;
 import models.employees.Employee;
 import models.tools.Tool;
-import models.departments.Department;
 import presenters.Model;
 
 import java.util.*;
 
 public class Plant implements Model {
-    private Map<Tool, Integer> plantListTool;
-    List<Department> listDepartments;
+private List<Department> departments;
+ private List<Transaction> transactions;
+ private String name;
 
-    dbModel model = new dbModel();
+ public Plant(String name) {
+  this.name = name;
+  this.departments = new ArrayList<>();
+  this.transactions = new ArrayList<>();
+ }
 
-    public Plant() {
-        this.plantListTool = new HashMap<>();
-        this.listDepartments = new ArrayList<>();
-    }
-public List<Department> loadListDepartments (){
-        // This method should load list with departments from bd.model
-   return model.getListDepartment();
-}
+ public boolean takeToolFromAnotherDepartment(Tool tool, int amount,Department departmentFrom, Department departmentTo, Employee employeeFrom, Employee employeeTo){
 
-
+  return true;
+ }
 }

@@ -1,5 +1,6 @@
 package models.tools;
 
 public interface Sharpenable {
-    public boolean sharpen ();
+    public boolean getIsSharpen();
+    public void setIsSharpen(boolean sharpen);
 }
